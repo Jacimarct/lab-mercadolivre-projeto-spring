@@ -9,13 +9,14 @@ import java.util.List;
 @RestController
 @RequestMapping("/produtos")
 public class ProdutoRestController {
+	
     private final ProdutoService produtoService;
 
     public ProdutoRestController(ProdutoService produtoService) {
         this.produtoService = produtoService;
     }
 
-    @GetMapping
+    @GetMapping("/listar")
     public List<Produto> listarTodos() {
         return produtoService.listarTodos();
     }
